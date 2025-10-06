@@ -5,7 +5,7 @@ addEventListener("DOMContentLoaded", async function () {
     const songID = urlparam.get('id')
     console.log(songID)
 
-    const response = await fetch("http://localhost:3000/api/songs/" + songID)
+    const response = await fetch("https://m06backend.onrender.com/api/songs" + songID)
     const song = await response.json()
     console.log(song)
 
@@ -29,7 +29,7 @@ async function deleteSong() {
         const urlparam = new URLSearchParams(window.location.search)
         const songID = urlparam.get('id')
         document.location.href = "/";
-        const response = await fetch("http://localhost:3000/api/songs/" + songID, {
+        const response = await fetch("https://m06backend.onrender.com/api/songs" + songID, {
             method: "DELETE"
         })
     } catch (err) {
